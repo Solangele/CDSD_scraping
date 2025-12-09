@@ -1,0 +1,49 @@
+[
+    {
+        "TEXTE": "“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”",
+        "AUTEUR": "Albert Einstein",
+        "TAGS": [
+            "change",
+            "deep-thoughts",
+            "thinking",
+            "world"
+        ]
+    },
+    {
+        "TEXTE": "“It is our choices, Harry, that show what we truly are, far more than our abilities.”",
+        "AUTEUR": "J.K. Rowling",
+        "TAGS": [
+            "abilities",
+            "choices"
+        ]
+    },
+    {
+        "TEXTE": "“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”",
+        "AUTEUR": "Albert Einstein",
+        "TAGS": [
+            "inspirational",
+            "life",
+            "live",
+            "miracle",
+            "miracles"
+        ]
+    },
+    {
+        "TEXTE": "“The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.”",
+        "AUTEUR": "Jane Austen",
+        "TAGS": [
+            "aliteracy",
+            "books",
+            "classic",
+            "humor"
+        ]
+    },
+    {
+        "TEXTE": "“Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.”",
+        "AUTEUR": "Marilyn Monroe",
+        "TAGS": [
+            "be-yourself",
+            "inspirational"
+        ]
+    }
+]
