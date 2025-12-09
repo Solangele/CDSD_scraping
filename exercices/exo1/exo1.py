@@ -5,7 +5,6 @@
 # **Tâches**
 # 1. Récupérer la page d'accueil avec Requests
 import requests
-from urllib.robotparser import RobotFileParser
 
 url = "http://quotes.toscrape.com"
 
