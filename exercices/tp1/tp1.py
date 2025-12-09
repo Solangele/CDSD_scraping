@@ -17,7 +17,6 @@ headers = {
 # **Mission**
 # 1. Créer une fonction `fetch_page(url)` avec gestion d'erreurs
 def fetch_page(url, timeout=1):
-    """Récupère une page avec gestion d'erreurs."""
     try:
         response = requests.get(
             url,
@@ -44,11 +43,23 @@ def fetch_page(url, timeout=1):
         return None
     
 (fetch_page)
+
+def save_html_to_file(html_content, filename):
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"Sauvegardé dans: {filename}")
+        
+    except Exception as e:
+        print(f"Erreur lors de la sauvegarde du fichier {filename}: {e}")
 # 2. Scraper les 3 premières pages du site
 # 3. Pour chaque page, extraire le HTML brut
 # 4. Compter le nombre de caractères de chaque page
+# 5. Sauvegarder chaque page dans un fichier HTML
 if __name__ == "__main__":
-    # URL valide
+    OUTPUT_DIR = "html_pages"
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
     url1 = "http://quotes.toscrape.com"
     url2 = f"{url1}/page/2/"
     url3 = f"{url1}/page/3/"
@@ -57,21 +68,19 @@ if __name__ == "__main__":
     html1 = fetch_page(url1)
     if html1:
         print("La première page contient :", len(html1), "caractères.")
+        save_html_to_file(html1, os.path.join(OUTPUT_DIR, "page_1.html"))
 
     print("=== Affichage page 2 ===")
     html2 = fetch_page(url2)
     if html2:
         print("La deuxième page contient :", len(html2), "caractères.")
+        save_html_to_file(html2, os.path.join(OUTPUT_DIR, "page_2.html"))
 
     print("=== Affichage page 3 ===")
     html3 = fetch_page(url3)
     if html3:
         print("La deuxième page contient :", len(html3), "caractères.")
-
-
-
-# 5. Sauvegarder chaque page dans un fichier HTML
-# voir tp1.html
+        save_html_to_file(html3, os.path.join(OUTPUT_DIR, "page_3.html"))
 
 
 # 6. Créer un rapport CSV avec :
@@ -86,7 +95,6 @@ HTTP_code = response.status_code
 content = response.content
 content_length = len(content)
 temps_de_reponse = response.elapsed.total_seconds()
-print(f"Temps de réponse total (timedelta): {temps_de_reponse}")
 
 data = {
         'URL': [url],
