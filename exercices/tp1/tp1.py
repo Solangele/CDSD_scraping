@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
 
 # 5. Sauvegarder chaque page dans un fichier HTML
-# voir exo1.html
+# voir tp1.html
 
 
 # 6. Créer un rapport CSV avec :
