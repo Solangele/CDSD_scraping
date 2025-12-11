@@ -10,7 +10,7 @@ class BooksSpider(scrapy.Spider):
 
     page_count = 1 
     max_pages = 3
-    
+
     def start_requests(self):
         yield scrapy.Request(url=self.start_urls[0], 
                             callback=self.parse, 

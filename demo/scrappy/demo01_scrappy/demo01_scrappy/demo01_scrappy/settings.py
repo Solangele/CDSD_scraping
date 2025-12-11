@@ -1,4 +1,4 @@
-# Scrapy settings for essai project
+# Scrapy settings for demo01_scrappy project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,16 +7,16 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "essai"
+BOT_NAME = "demo01_scrappy"
 
-SPIDER_MODULES = ["essai.spiders"]
-NEWSPIDER_MODULE = "essai.spiders"
+SPIDER_MODULES = ["demo01_scrappy.spiders"]
+NEWSPIDER_MODULE = "demo01_scrappy.spiders"
 
 ADDONS = {}
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "essai (+http://www.yourdomain.com)"
+#USER_AGENT = "demo01_scrappy (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -41,13 +41,13 @@ DOWNLOAD_DELAY = 1
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "essai.middlewares.EssaiSpiderMiddleware": 543,
+#    "demo01_scrappy.middlewares.Demo01ScrappySpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "essai.middlewares.EssaiDownloaderMiddleware": 543,
+#    "demo01_scrappy.middlewares.Demo01ScrappyDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -59,7 +59,7 @@ DOWNLOAD_DELAY = 1
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "essai.pipelines.EssaiPipeline": 300,
+#    "demo01_scrappy.pipelines.Demo01ScrappyPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -85,3 +85,15 @@ DOWNLOAD_DELAY = 1
 
 # Set settings whose default value is deprecated to a future-proof value
 FEED_EXPORT_ENCODING = "utf-8"
+
+# Settings pour definir les pipelines a utiliser
+ITEM_PIPELINES = {
+    "demo01_scrappy.pipelines.DuplicatesPipeline" : 100,
+    "demo01_scrappy.pipelines.PriceConversionPipeline" : 200,
+    "demo01_scrappy.pipelines.JsonWriterPipeline" : 300,
+}
+
+
+DOWNLOADER_MIDDLEWARES = {
+    "demo01_scrappy.middlewares.RandomUserAgentMiddleware" : 400,
+}
