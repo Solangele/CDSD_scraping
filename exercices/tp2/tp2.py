@@ -72,6 +72,8 @@ while current_page_url and page_count < MAX_PAGES:
         })
 print(f"Nombre TOTAL de pages parcourues : {page_count}")
 print(f"Nombre total de citations collectées : {len(quotes_data)}")
+
+
 # 4. Crée un fichier Excel avec 3 feuilles :
 #    - "Citations" : Toutes les citations
 #    - "Auteurs" : Liste unique des auteurs avec nb de citations
